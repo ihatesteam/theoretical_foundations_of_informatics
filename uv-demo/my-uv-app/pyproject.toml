@@ -1,5 +1,5 @@
 [project]
-name = "my-uv-app"
+name = "my-uv-app-1"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "httpx>=0.28.1",
+    "my-uv-app",
     "requests>=2.34.2",
     "rich>=15.0.0",
 ]
@@ -19,3 +20,11 @@ my-uv-app = "my_uv_app:main"
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.uv.sources]
+my-uv-app = { git = "https://github.com/ihatesteam/theoretical_foundations_of_informatics.git", subdirectory = "uv-demo/my-uv-app" }
